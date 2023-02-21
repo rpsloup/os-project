@@ -1,4 +1,5 @@
 import Taskbar from '../Taskbar';
+import TaskbarModule from '../TaskbarModule';
 
 import type { TaskbarPosition } from '../../typings/taskbarTypes';
 
@@ -14,7 +15,13 @@ const Desktop = ({
   taskbarPosition,
 }: IProps): JSX.Element => (
   <div className="desktop">
-    {showTaskbar ? <Taskbar position={taskbarPosition} /> : null}
+    {showTaskbar ? (
+      <Taskbar position={taskbarPosition}>
+        <TaskbarModule />
+        <TaskbarModule />
+        <TaskbarModule />
+      </Taskbar>
+    ) : null}
   </div>
 );
 
